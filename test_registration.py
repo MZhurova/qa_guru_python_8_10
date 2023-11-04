@@ -3,7 +3,7 @@ import os
 from selene import have
 
 
-def test_registr():
+def test_registration():
     browser.open('/automation-practice-form')
     browser.element('#firstName').type('Mariya')
     browser.element('#lastName').type('Zhurova')
