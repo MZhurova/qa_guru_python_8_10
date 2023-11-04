@@ -1,4 +1,4 @@
-from demoga_tests.registration_page import RegistrationPage
+from demoga_tests.pages.registration_page import RegistrationPage
 
 
 def test_registration():
