@@ -45,9 +45,6 @@ class RegistrationPage:
             os.path.abspath(
                 os.path.join(os.path.dirname(tests.__file__), f'image/{file_name}')))
 
-##        browser.element('#uploadPicture').send_keys(
- ##           os.path.abspath('image/2012091208303549.png'))
-
     def type_address(self, value):
         browser.element('#currentAddress').type(value)
 
