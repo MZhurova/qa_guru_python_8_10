@@ -2,6 +2,8 @@ from selene.support.shared import browser
 import os
 from selene import have
 
+import tests
+
 
 class RegistrationPage:
 
@@ -38,9 +40,13 @@ class RegistrationPage:
     def type_hobbies(self):
         browser.element('label[for="hobbies-checkbox-1"]').click()
 
-    def type_picture(self):
+    def type_picture(self, file_name):
         browser.element('#uploadPicture').send_keys(
-            os.path.abspath('image/2012091208303549.png'))
+            os.path.abspath(
+                os.path.join(os.path.dirname(tests.__file__), f'image/{file_name}')))
+
+##        browser.element('#uploadPicture').send_keys(
+ ##           os.path.abspath('image/2012091208303549.png'))
 
     def type_address(self, value):
         browser.element('#currentAddress').type(value)
