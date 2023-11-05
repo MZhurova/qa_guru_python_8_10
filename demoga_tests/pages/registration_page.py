@@ -2,6 +2,8 @@ import os
 from selene import have
 from selene.support.shared import browser
 
+import tests
+
 
 class RegistrationPage:
 
@@ -20,7 +22,7 @@ class RegistrationPage:
         browser.element(f'.react-datepicker__day--00{mariya.date_of_birth.day}').click()
         browser.element('#subjectsInput').type(mariya.subjects).press_enter()
         browser.element('label[for="hobbies-checkbox-1"]').click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath('image/2012091208303549.png'))
+        browser.element('#uploadPicture').send_keys(os.path.abspath(os.path.join(os.path.dirname(tests.__file__), f'image/{mariya.picture}')))
         browser.element('#currentAddress').type(mariya.address)
         browser.element('#react-select-3-input').type(mariya.state).press_enter()
         browser.element('#react-select-4-input').type(mariya.city).press_enter()
